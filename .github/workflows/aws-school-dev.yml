@@ -41,7 +41,7 @@ jobs:
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
-        task-definition: task-definition-school-account-dev.json
+        task-definition: task-definition-dev.json
         container-name: dev-sguha2
         image: ${{ steps.build-image.outputs.image }}
        
