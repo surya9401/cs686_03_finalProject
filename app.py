@@ -10,7 +10,7 @@ app.secret_key = "Secret Key"
 
 @app.route('/')
 def hello():
-    print('Welcome to our final Project')
+    return 'Welcome to our final Project'
 
 @app.route('/leagues', methods=['GET'])
 def get_leagues():
