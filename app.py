@@ -9,7 +9,7 @@ app.secret_key = "Secret Key"
 
 @app.route('/')
 def hello():
-    return 'Welcome to our final Project'
+    return render_template('home.html')
 
 @app.route('/leagues', methods=['GET'])
 def get_leagues():

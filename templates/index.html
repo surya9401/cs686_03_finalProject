@@ -13,6 +13,7 @@
 <div class="container">
     <div class="row">
         <div class="col mf-12">
+            {% if value %}
                 <table class="table">
                   <thead>
                     <tr>
@@ -22,17 +23,16 @@
                   </thead>
 
                   <tbody>
-                    {% if value %}
+
                     {% for key in value %}
                         <tr>
                           <th scope="row">{{ key }}</th>
-                            <td><a href="{{ value[key] }}">{{ value[key] }}</a></td>
+                            <td><img src="{{ value[key] }}"></td>
                         </tr>
                     {% endfor %}
                   </tbody>
                 </table>
-
-                    {% endif %}
+            {% endif %}
 
         </div>
     </div>
