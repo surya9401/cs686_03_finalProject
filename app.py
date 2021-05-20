@@ -10,7 +10,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 @app.route('/')
 def hello():
-    return 'Hello! Welcome to our final project website'
+    return 'Hello! Welcome to our final project website (testing)'
 
 
 @app.route('/leagues', methods=['GET'])
