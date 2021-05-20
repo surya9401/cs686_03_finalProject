@@ -1,6 +1,7 @@
 on:
-  repository_dispatch:
-    types: [trigger-aws-dev-workflow]
+  push:
+    branches:
+      - main
 
 name: Deploy to Amazon ECS - Dev Env
 
