@@ -1,8 +1,7 @@
-import time
 import os
-from flask import Flask, request, render_template, url_for, flash, redirect
+
 import requests
-import json
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
