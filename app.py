@@ -1,17 +1,16 @@
 import time
 import os
-from flask import Flask, request
+from flask import Flask, request, render_template, url_for, flash, redirect
 import requests
 import json
 
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
-
+app.secret_key = "Secret Key"
 
 @app.route('/')
 def hello():
-    return 'Hello! Welcome to our final project website (testing)'
-
+    print('Welcome to our final Project')
 
 @app.route('/leagues', methods=['GET'])
 def get_leagues():
@@ -25,8 +24,7 @@ def get_leagues():
     leagues_data = {}
     for league in leagues:
         leagues_data[league['league']['name']] = league['league']['logo']
-
-    return json.dumps(leagues_data)
+    return render_template('index.html', value=leagues_data)
 
 
 @app.route('/players', methods=['GET'])
@@ -40,7 +38,7 @@ def get_players():
     players = {}
     for player in data['response']:
         players[player['player']['name']] = player['player']['photo']
-    return json.dumps(players)
+    return render_template('index.html', value=players)
 
 
 def get_headers():
